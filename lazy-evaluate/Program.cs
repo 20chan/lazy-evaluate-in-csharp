@@ -99,7 +99,7 @@ namespace lazy_evaluate
         }
         #endregion
 
-        #region LazyAndOr
+        #region AndOr
         static void AndOr()
         {
             Console.WriteLine("&&, ||를 테스트합니다.");
