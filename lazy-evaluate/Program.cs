@@ -12,9 +12,10 @@ namespace lazy_evaluate
         {
             //Lottery1();
             //Lottery2();
+            LinqTest();
             //LazyArgument();
             //LazyTest();
-            AndOr();
+            //AndOr();
 
             Console.ReadLine();
         }
@@ -42,6 +43,22 @@ namespace lazy_evaluate
             var r2 = r.ToList();
             Console.WriteLine("ToList()를 한 후 i의 값 : {0}", i);
             Console.WriteLine(string.Join(", ", r2));
+        }
+
+        static void LinqTest()
+        {
+            Console.WriteLine("\n\tLINQ 테스트");
+            var data = new int[]{3, 2, 1, 4 };
+            int l = 0;
+            var newdata = (from i in data
+                           orderby i
+                           select i * i + ( 0 * l++));
+            Console.WriteLine(l);
+            var a = newdata.GetEnumerator();
+            a.MoveNext();
+            Console.WriteLine(l);
+            newdata.First();
+            Console.WriteLine(l);
         }
         #endregion
 
